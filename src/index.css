@@ -60,7 +60,7 @@ body {
 }
 .facebook-icon > svg {
   background: var(--Facebook);
-  color: var(--BG);
+  color: var(--Card-BG);
   padding: 2px;
   border: 2px;
 }
@@ -151,5 +151,53 @@ body {
 @media (min-width: 768px) {
   .cols-4 {
     grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
+
+/* Card Likes */
+.card-like {
+  background: var(--Card-BG);
+  width: 100%;
+  padding: 2.4rem;
+  border-radius: 5px;
+}
+
+.card_likes-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2.1rem;
+}
+
+.card_likes-header > p {
+  margin: 0;
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: var(--Desaturated-Blue-Text);
+}
+
+.card_likes-number {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.card_likes-number > h3 {
+  margin: 0;
+  font-size: 3.2rem;
+}
+
+.likes-rate {
+  justify-content: start;
+  margin: 0;
+}
+
+.likes-rate > p {
+  margin: 0;
+}
+
+@media (max-width: 549px) {
+  .card-like {
+    min-width: 23rem;
   }
 }
