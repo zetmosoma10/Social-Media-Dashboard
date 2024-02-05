@@ -47,3 +47,109 @@ body {
   background-color: var(--BG);
   color: var(--Text);
 }
+
+.container {
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+/* Icons */
+.icon > svg {
+  width: 20px;
+  height: 20px;
+}
+.facebook-icon > svg {
+  background: var(--Facebook);
+  color: var(--BG);
+  padding: 2px;
+  border: 2px;
+}
+
+/* Card */
+
+.card-followers {
+  width: 100%;
+  /* max-width: 25.5rem; */
+  /* min-width: 23rem; */
+  background: var(--Card-BG);
+  border: none;
+  border-top: 2px solid var(--Facebook);
+  border-radius: 2px;
+  padding: 3rem 0 2.3rem;
+  text-align: center;
+}
+
+@media (max-width: 767px) {
+  .card-followers {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
+
+.card_header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card_header .icon {
+  margin-right: 0.5rem;
+}
+
+.card_header > p {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: var(--Desaturated-Blue-Text);
+  margin: 0;
+}
+
+.followers_numbers {
+  font-size: 5.6rem;
+  font-weight: bold;
+  color: var(--Text);
+  line-height: 48px;
+  letter-spacing: -2px;
+  margin: 2.8rem 0 0.9rem;
+}
+
+.followes-text {
+  font-size: 1.2rem;
+  letter-spacing: 5px;
+  color: var(--Desaturated-Blue-Text);
+  margin: 0;
+}
+
+.card_rate {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2.5rem;
+}
+
+.card_rate > img {
+  margin-right: 2px;
+}
+
+.card_rate > p {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: var(--Lime-Green);
+}
+
+.grid {
+  display: grid;
+  gap: 3rem;
+  justify-content: center;
+}
+
+@media (min-width: 550px) {
+  .cols-2 {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 768px) {
+  .cols-4 {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
