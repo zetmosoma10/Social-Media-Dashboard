@@ -1,16 +1,49 @@
-import { useState } from "react";
+import { useState, createContext } from "react";
 import CardFollowers from "./components/CardFollowers";
 import CardLikes from "./components/CardLikes";
-import Toggle from "./components/Toggle";
+import NavBar from "./components/Navbar";
+import { followersData } from "./data";
+
+const ThemeContext = createContext();
+export { ThemeContext };
 
 function App() {
-  const [theme, setTheme] = useState(true);
-
+  const [theme, setTheme] = useState(false);
+  const [cardData, setCardData] = useState(followersData);
   const themeToggler = () => {
     setTheme((prevTheme) => !prevTheme);
+    document.body.classList.toggle("light");
   };
 
-  return <Toggle handleToggle={themeToggler} theme={theme} />;
+  const themeClass = theme ? "light" : "";
+
+  const renderCardFollowers = cardData.map((card) => (
+    <CardFollowers key={card.socialIcon} item={card} />
+  ));
+
+  console.log(renderCardFollowers);
+
+  return (
+    <ThemeContext.Provider value={{ theme, themeToggler, themeClass }}>
+      <NavBar />
+      <div className={`container `}>
+        <div className="grid cols-2 cols-4 grid-followers">
+          {renderCardFollowers}
+          {/* <h2 className="likes-heading">Overview - Today</h2> */}
+          {/* <div className="grid cols-2 cols-4 grid-likes"> */}
+          <CardLikes />
+          <CardLikes />
+          <CardLikes />
+          <CardLikes />
+          <CardLikes />
+          <CardLikes />
+          <CardLikes />
+          <CardLikes />
+        </div>
+        {/* </div> */}
+      </div>
+    </ThemeContext.Provider>
+  );
 }
 
 export default App;

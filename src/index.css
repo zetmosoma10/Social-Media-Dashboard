@@ -9,7 +9,7 @@ html {
 
   --Facebook: hsl(208, 92%, 53%);
   --Twitter: hsl(203, 89%, 53%);
-  --Instagram: linear gradient hsl(37, 97%, 70%) to hsl(329, 70%, 58%);
+  --Instagram: linear-gradient(hsl(37, 97%, 70%), hsl(329, 70%, 58%));
   --YouTube: hsl(348, 97%, 39%);
 
   /* #### Dark Theme */
@@ -46,11 +46,13 @@ body {
   font-weight: 400;
   background-color: var(--BG);
   color: var(--Text);
+  margin: 0;
 }
 
 .container {
   max-width: 1120px;
   margin: 0 auto;
+  padding: 2.5rem;
 }
 
 /* Icons */
@@ -70,7 +72,6 @@ body {
 .card-followers {
   width: 100%;
   /* max-width: 25.5rem; */
-  /* min-width: 23rem; */
   background: var(--Card-BG);
   border: none;
   border-top: 2px solid var(--Facebook);
@@ -81,6 +82,7 @@ body {
 
 @media (max-width: 767px) {
   .card-followers {
+    min-width: 23rem;
     padding-left: 3rem;
     padding-right: 3rem;
   }
@@ -92,7 +94,7 @@ body {
   justify-content: center;
 }
 
-.card_header .icon {
+.card_header > img {
   margin-right: 0.5rem;
 }
 
@@ -142,6 +144,15 @@ body {
   justify-content: center;
 }
 
+.grid-followers {
+  position: relative;
+  bottom: 45px;
+}
+
+.grid-likes {
+  position: relative;
+}
+
 @media (min-width: 550px) {
   .cols-2 {
     grid-template-columns: 1fr 1fr;
@@ -152,9 +163,28 @@ body {
   .cols-4 {
     grid-template-columns: 1fr 1fr 1fr 1fr;
   }
+  .grid-followers {
+    bottom: 100px;
+  }
+
+  .grid-likes {
+    bottom: 80px;
+  }
+
+  .likes-heading {
+    /* bottom: 1px; */
+  }
 }
 
 /* Card Likes */
+.likes-heading {
+  font-size: 2.4rem;
+  color: var(--Text);
+  padding: 0 0 3rem;
+  margin: 0;
+  position: relative;
+}
+
 .card-like {
   background: var(--Card-BG);
   width: 100%;
@@ -185,6 +215,7 @@ body {
 .card_likes-number > h3 {
   margin: 0;
   font-size: 3.2rem;
+  color: var(--Text);
 }
 
 .likes-rate {
@@ -200,6 +231,10 @@ body {
   .card-like {
     min-width: 23rem;
   }
+
+  .likes-heading {
+    text-align: center;
+  }
 }
 
 /* Toogle */
@@ -207,6 +242,7 @@ body {
 .toggle-container {
   display: flex;
   align-items: center;
+  justify-content: space-between;
 }
 
 .toggle-text {
@@ -237,4 +273,47 @@ body {
   height: 18px;
   border-radius: 100%;
   background-color: var(--BG);
+}
+
+/* NAVBAR */
+nav {
+  background-color: var(--Top-BG-Pattern);
+  padding-bottom: 4rem;
+  border-bottom-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+
+.nav-header {
+  padding-bottom: 2.4rem;
+  border-bottom: 1px solid var(--Card-BG);
+}
+
+.heading {
+  color: var(--Text);
+  font-size: 2.4rem;
+  margin: 0.4rem 0;
+}
+
+.total-followers {
+  font-weight: bold;
+  color: var(--Desaturated-Blue-Text);
+  font-size: 1.4rem;
+  margin: 0;
+}
+
+@media (min-width: 768px) {
+  .toggle-container {
+    justify-content: unset;
+  }
+
+  .nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 3rem 2.5rem 15rem;
+  }
+
+  .nav-header {
+    border: none;
+  }
 }

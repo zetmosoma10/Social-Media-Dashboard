@@ -1,8 +1,11 @@
+import { useContext } from "react";
 import { FaFacebookF } from "react-icons/fa";
+import { ThemeContext } from "../App";
 
 function CardLikes() {
+  const { themeClass } = useContext(ThemeContext);
   return (
-    <div className="card-like">
+    <div className={`card-like ${themeClass}`}>
       <div className="card_likes-header">
         <p>Likes</p>
         <span className="icon facebook-icon">

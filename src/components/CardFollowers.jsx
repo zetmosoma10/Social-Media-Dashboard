@@ -1,19 +1,24 @@
-import { FaFacebookF } from "react-icons/fa";
+import { useContext } from "react";
+import { ThemeContext } from "../App";
 
-function CardFollowers() {
+function CardFollowers({ item }) {
+  const { themeClass } = useContext(ThemeContext);
+
+  const topBorder = {
+    borderColor: item.borderColor,
+  };
+
   return (
-    <div className="card-followers">
+    <div className={`card-followers ${themeClass}`} style={topBorder}>
       <div className="card_header">
-        <span className="icon facebook-icon">
-          <FaFacebookF />
-        </span>
-        <p className="card_name">@nathanf</p>
+        <img src={item.socialIcon} />
+        <p className="card_name">{item.username}</p>
       </div>
-      <h2 className="followers_numbers">1987</h2>
-      <p className="followes-text">FOLLOWERS</p>
+      <h2 className="followers_numbers">{item.numbers}</h2>
+      <p className="followes-text">{item.text}</p>
       <div className="card_rate">
-        <img src="images/icon-up.svg" />
-        <p>12 Today</p>
+        <img src={item.todayIcon} />
+        <p style={{ color: `${item.todayTextColor}` }}>{item.todayText}</p>
       </div>
     </div>
   );
