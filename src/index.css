@@ -33,6 +33,7 @@ html {
 
   /* #### Light Theme */
   --Toggle: hsl(230, 22%, 74%);
+  transition: all 0.4s ease-out;
 }
 
 *,
@@ -144,7 +145,7 @@ body {
   justify-content: center;
 }
 
-.grid-followers {
+.grid-container {
   position: relative;
   bottom: 45px;
 }
@@ -163,16 +164,8 @@ body {
   .cols-4 {
     grid-template-columns: 1fr 1fr 1fr 1fr;
   }
-  .grid-followers {
+  .grid-container {
     bottom: 100px;
-  }
-
-  .grid-likes {
-    bottom: 80px;
-  }
-
-  .likes-heading {
-    /* bottom: 1px; */
   }
 }
 
@@ -180,8 +173,8 @@ body {
 .likes-heading {
   font-size: 2.4rem;
   color: var(--Text);
-  padding: 0 0 3rem;
-  margin: 0;
+  margin-top: 2.5rem;
+  margin-bottom: 1.4rem;
   position: relative;
 }
 
@@ -262,6 +255,7 @@ body {
   align-items: center;
   padding: 1.5px;
   justify-content: start;
+  transition: all 0.4s ease-out;
 }
 
 .toggler.light {

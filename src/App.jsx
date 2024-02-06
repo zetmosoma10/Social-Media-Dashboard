@@ -2,7 +2,7 @@ import { useState, createContext } from "react";
 import CardFollowers from "./components/CardFollowers";
 import CardLikes from "./components/CardLikes";
 import NavBar from "./components/Navbar";
-import { followersData } from "./data";
+import { followersData, likesData } from "./data";
 
 const ThemeContext = createContext();
 export { ThemeContext };
@@ -21,26 +21,19 @@ function App() {
     <CardFollowers key={card.socialIcon} item={card} />
   ));
 
-  console.log(renderCardFollowers);
+  const renderCardLikes = likesData.map((card, index) => (
+    <CardLikes key={index} item={card} />
+  ));
 
   return (
     <ThemeContext.Provider value={{ theme, themeToggler, themeClass }}>
       <NavBar />
-      <div className={`container `}>
+      <div className="container grid-container">
         <div className="grid cols-2 cols-4 grid-followers">
           {renderCardFollowers}
-          {/* <h2 className="likes-heading">Overview - Today</h2> */}
-          {/* <div className="grid cols-2 cols-4 grid-likes"> */}
-          <CardLikes />
-          <CardLikes />
-          <CardLikes />
-          <CardLikes />
-          <CardLikes />
-          <CardLikes />
-          <CardLikes />
-          <CardLikes />
         </div>
-        {/* </div> */}
+        <h2 className="likes-heading">Overview - Today</h2>
+        <div className="grid cols-2 cols-4 grid-likes">{renderCardLikes}</div>
       </div>
     </ThemeContext.Provider>
   );

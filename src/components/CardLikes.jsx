@@ -2,21 +2,19 @@ import { useContext } from "react";
 import { FaFacebookF } from "react-icons/fa";
 import { ThemeContext } from "../App";
 
-function CardLikes() {
+function CardLikes({ item }) {
   const { themeClass } = useContext(ThemeContext);
   return (
     <div className={`card-like ${themeClass}`}>
       <div className="card_likes-header">
-        <p>Likes</p>
-        <span className="icon facebook-icon">
-          <FaFacebookF />
-        </span>
+        <p>{item.text}</p>
+        <img src={item.socialIcon} alt="" />
       </div>
       <div className="card_likes-number">
-        <h3>52</h3>
+        <h3>{item.numbers}</h3>
         <div className="card_rate likes-rate">
-          <img src="images/icon-up.svg" />
-          <p>12 Today</p>
+          <img src={item.todayIcon} />
+          <p style={{ color: `${item.todayTextColor}` }}>{item.todayText}</p>
         </div>
       </div>
     </div>
