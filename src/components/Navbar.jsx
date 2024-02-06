@@ -1,11 +1,8 @@
-import { useContext } from "react";
 import Toggle from "./Toggle";
-import { ThemeContext } from "../App";
 
 function NavBar() {
-  const { themeClass } = useContext(ThemeContext);
   return (
-    <nav className={themeClass}>
+    <nav>
       <div className="nav-container container">
         <div className="nav-header ">
           <h1 className="heading">Social Media Dashboard</h1>

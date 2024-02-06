@@ -1,11 +1,6 @@
-import { useContext } from "react";
-import { FaFacebookF } from "react-icons/fa";
-import { ThemeContext } from "../App";
-
 function CardLikes({ item }) {
-  const { themeClass } = useContext(ThemeContext);
   return (
-    <div className={`card-like ${themeClass}`}>
+    <div className={`card-like`}>
       <div className="card_likes-header">
         <p>{item.text}</p>
         <img src={item.socialIcon} alt="" />

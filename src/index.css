@@ -72,13 +72,13 @@ body {
 
 .card-followers {
   width: 100%;
-  /* max-width: 25.5rem; */
   background: var(--Card-BG);
   border: none;
   border-top: 2px solid var(--Facebook);
   border-radius: 2px;
   padding: 3rem 0 2.3rem;
   text-align: center;
+  cursor: pointer;
 }
 
 @media (max-width: 767px) {
@@ -183,6 +183,14 @@ body {
   width: 100%;
   padding: 2.4rem;
   border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.card-like:hover,
+.card-followers:hover {
+  opacity: 0.8;
+  transform: scale(1.01);
 }
 
 .card_likes-header {

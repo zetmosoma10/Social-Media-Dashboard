@@ -15,8 +15,6 @@ function App() {
     document.body.classList.toggle("light");
   };
 
-  const themeClass = theme ? "light" : "";
-
   const renderCardFollowers = cardData.map((card) => (
     <CardFollowers key={card.socialIcon} item={card} />
   ));
@@ -26,7 +24,7 @@ function App() {
   ));
 
   return (
-    <ThemeContext.Provider value={{ theme, themeToggler, themeClass }}>
+    <ThemeContext.Provider value={{ themeToggler }}>
       <NavBar />
       <div className="container grid-container">
         <div className="grid cols-2 cols-4 grid-followers">

@@ -1,15 +1,10 @@
-import { useContext } from "react";
-import { ThemeContext } from "../App";
-
 function CardFollowers({ item }) {
-  const { themeClass } = useContext(ThemeContext);
-
   const topBorder = {
     borderColor: item.borderColor,
   };
 
   return (
-    <div className={`card-followers ${themeClass}`} style={topBorder}>
+    <div className={`card-followers`} style={topBorder}>
       <div className="card_header">
         <img src={item.socialIcon} />
         <p className="card_name">{item.username}</p>
